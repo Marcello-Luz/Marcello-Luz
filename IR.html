@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Título</title>
+
+</head>
+
+<style>
+form {
+    max-width: 300px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+    
+input[type="number"] {
+    width: 95%;
+    height: 30px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+input[type="text"] {
+    width: 95%;
+    height: 30px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+button[type="button"] {
+    width: 100%;
+    height: 30px;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+</style>
+
+
+<body>
+
+    <form>
+        <h1>Cálculo IR</h1>
+    <label for="name">Nome</label>
+    <input type="text" id="name">
+    <br><br>
+    <label for="salary">Salário Líquido</label>
+    <input type="number" id="salary">
+    <br><br>
+    <button type="button" onclick="calculoIR()">Calcular</button>
+    <br><br>
+    
+    </form>
+
+    <script>
+        function calculoIR() {
+    
+    var salary = document.getElementById("salary").value;
+    
+    
+    if (salary < 2000) {
+        var irValue = salary * 0.3; 
+    } else {
+        var irValue = salary * 0.4; 
+    }
+    
+    
+    alert("Valor IR é R$" + irValue);
+}
+
+
+
+    </script>
+
+</body>
+
+</html>

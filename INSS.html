@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Título</title>
+    <style>
+        form {
+            max-width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input[type="number"] {
+            width: 95%;
+            height: 30px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        
+        input[type="text"] {
+            width: 95%;
+            height: 30px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        
+        button[type="button"] {
+            width: 100%;
+            height: 30px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <h1>Cálculo INSS</h1>
+        <label for="name">Nome</label>
+        <input type="text" id="name">
+        <br><br>
+        <label for="salary">Salário Líquido</label>
+        <input type="number" id="salary">
+        <br><br>
+        <label for="discount">Descontos (%)</label>
+        <input type="number" id="discount">
+        <br><br>
+        <button type="button" onclick="calculoINSS()">Calcular</button>
+        <br><br>
+        <p id="result"></p>
+    </form>
+
+    <script>
+    function calculoINSS() {
+        const salary = document.getElementById("salary").value;
+        const discountPercentage = document.getElementById("discount").value;
+        const discountAmount = (salary * (discountPercentage / 100));
+        const resultElement = document.getElementById("result");
+        alert(`Seu desconto é R$  ${discountAmount.toFixed(2)}`);
+    }
+    </script>
+</body>
+</html>
